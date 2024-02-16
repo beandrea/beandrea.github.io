@@ -27,7 +27,7 @@ url:  https://beandrea.github.io
 github_username:  beandrea
 
 # Build settings
-theme: jekyll-theme-hacker
+theme: hacker
 plugins:
   - jekyll-feed
 
