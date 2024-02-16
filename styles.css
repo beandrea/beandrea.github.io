@@ -1,3 +1,7 @@
+.body{
+    background-color: slateblue;
+    color: gray;
+}
 #Welcome {
     margin: auto;
     text-align: center;
