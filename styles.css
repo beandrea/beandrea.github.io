@@ -9,5 +9,11 @@ body {
 }
 
 #Projects {
-    background-color: black;
+    width: 25%;
+    background-color: white;
+    color: black;
+}
+
+:visited{
+    color: blue;
 }
