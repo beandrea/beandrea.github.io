@@ -2,7 +2,12 @@ body {
     background-color: slateblue;
     color: black;
 }
+
 #Welcome {
     margin: auto;
     text-align: center;
+}
+
+#Projects {
+    background-color: black;
 }
