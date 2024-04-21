@@ -12,9 +12,11 @@ class Encounter {
     draw(){
         image(this.img, 0, 0, windowWidth, windowHeight);
         fill(179, 196, 199);
-        rect(0, 7 * Math.floor(windowHeight / 10), windowWidth, windowHeight);
-        line(7 * height / 10, (7 * windowWidth / 10) - 5, 7 * windowHeight / 10, windowWidth);
-        rect(7 * windowWidth / 10, (7 * windowHeight / 10) - 5, windowHeight / 6, windowWidth);
+        rect(0, 7 * windowHeight / 10, windowWidth, windowHeight);
+        rect(7 * windowHeight / 10, (7 * windowWidth / 10) - 5, windowHeight / 5, windowWidth);
+        rect(7 * windowHeight / 10, (7 * windowWidth / 10) - 5, 2 * windowHeight / 5, windowWidth);
+        rect(7 * windowHeight / 10, (7 * windowWidth / 10) - 5, 3 * windowHeight / 5, windowWidth);
+        rect(7 * windowHeight / 10, (7 * windowWidth / 10) - 5, 4 * windowHeight / 5, windowWidth);
         fill(0, 0, 0);
         textSize(30);
         text('(F)ight', (7 * windowWidth / 10) + 15, (7 * windowHeight / 10) + 30);
