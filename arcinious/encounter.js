@@ -17,7 +17,7 @@ class Encounter {
         fill(0, 0, 0);
         textSize(30);
         text('(F)ight', (7 * windowWidth / 10) + 15, (7 * windowHeight / 10) + 30);
-        line(7 * windowWidth / 10, 7 * windowHeight / 10, 7 * windowWidth / 10, windowWidth);
+        line(7 * windowWidth / 10, (7 * windowHeight / 10) + 40, 7 * windowWidth / 10, windowWidth);
         text('(S)pells', (7 * windowWidth / 10) + 15, (7 * windowHeight / 10) + 85);
         text('(I)tems', (7 * windowWidth / 10) + 15, (7 * windowHeight / 10) + 140);
         text('(R)un', (7 * windowWidth / 10) + 13, (7 * windowHeight / 10) + 195);
