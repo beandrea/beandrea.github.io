@@ -3,7 +3,7 @@ class Encounter {
         this.manager = stateManager;
         this.player = player;
         this.enemySpawn = spawner;
-        this.img = loadImage('./assets/battleBackground.png');
+        this.img = loadImage('./assets/battleBackground.jpg');
     }
 
     init(){
