@@ -7,7 +7,7 @@ class Character {
 
         this.updatePosition();
 
-        this.img = loadImage('./assests/player.png');
+        this.img = loadImage('./assets/player.png');
         this.pos;
     }
 
