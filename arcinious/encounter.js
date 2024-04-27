@@ -12,11 +12,13 @@ class Encounter {
     draw(){
         image(this.img, 0, 0, windowWidth, windowHeight);
         fill(179, 196, 199);
+        stroke(0, 0, 0);
         rect(0, 7 * windowHeight / 10, windowWidth, windowHeight);
-        rect(7 * windowHeight / 10, (7 * windowWidth / 10) - 5, windowHeight / 5, windowWidth);
-        rect(7 * windowHeight / 10, (7 * windowWidth / 10) - 5, 2 * windowHeight / 5, windowWidth);
-        rect(7 * windowHeight / 10, (7 * windowWidth / 10) - 5, 3 * windowHeight / 5, windowWidth);
-        rect(7 * windowHeight / 10, (7 * windowWidth / 10) - 5, 4 * windowHeight / 5, windowWidth);
+        fill(179, 196, 200);
+        rect((7 * windowWidth / 10), (7 * windowHeight / 10), (9 * windowWidth / 31), 55);
+        rect((7 * windowWidth / 10), (7 * windowHeight / 10) + 55, (9 * windowWidth / 31), 55);
+        rect((7 * windowWidth / 10), (7 * windowHeight / 10) + 110, (9 * windowWidth / 31), 55);
+        rect((7 * windowWidth / 10), (7 * windowHeight / 10) + 165, (9 * windowWidth / 31), 55);
         fill(0, 0, 0);
         textSize(30);
         text('(F)ight', (7 * windowWidth / 10) + 15, (7 * windowHeight / 10) + 30);
