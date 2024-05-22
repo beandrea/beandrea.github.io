@@ -5,4 +5,4 @@ _site
 vendor
 .npm
 node_modules/
-/myenv
+/mazeSolver/myenv
