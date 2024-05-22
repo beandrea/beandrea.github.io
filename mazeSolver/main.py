@@ -1,7 +1,15 @@
+from flask import Flask, render_template_string
 from graphics import Window
 from cell import Cell
 
-def main() -> None:
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template_string('index.html')
+
+@app.route('/maze')
+def maze():
     win = Window(800, 600)
 
     c = Cell(win)
@@ -22,4 +30,6 @@ def main() -> None:
 
     win.wait_for_close()
 
-main()
+if __name__ == '__main__':
+    app.run(debug=True)
+
