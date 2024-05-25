@@ -1,20 +1,79 @@
 class Cell {
     constructor(){
-        var __has_left_wall = true;
-        var __has_right_wall = true;
-        var __has_bottom_wall = true;
-        var __has_top_wall = true;
-        var __visited = false;
+        var __x1;
+        var __y1;
+        var __x2;
+        var __y2;
 
-        this.set_left_wall = function(exists){ __has_left_wall = exists};
-        this.get_left_wall = function(){ return __has_left_wall };
-        this.set_right_wall = function (exists) { __has_right_wall = exists };
-        this.get_right_wall = function () { return __has_right_wall };
-        this.set_bottom_wall = function (exists) { __has_bottom_wall = exists };
-        this.get_bottom_wall = function () { return __has_bottom_wall };
-        this.set_top_wall = function (exists) { __has_top_wall = exists };
-        this.get_top_wall = function () { return __has_top_wall };
-        this.set_visited = function(is_visited){ __visited = is_visited };
-        this.get_visited = function(){ return __visited };
+        this.has_left_wall = true;
+        this.has_right_wall = true;
+        this.has_bottom_wall = true;
+        this.has_top_wall = true;
+        this.visited = false;
+
+        this.set_x1 = function(x1){ __x1 = x1 };
+        this.get_x1 = function(){ return __x1 };
+        this.set_y1 = function (y1) { __y1 = y1 };
+        this.get_y1 = function () { return __y1 };
+        this.set_x2 = function (x2) { __x2 = x2 };
+        this.get_x2 = function () { return __x2 };
+        this.set_y2 = function (y2) { __y2 = y2 };
+        this.get_y2 = function () { return __y2 };
+    }
+
+    draw(x1, x2, y1, y2){
+        this.set_x1(x1);
+        this.set_x2(x2);
+        this.set_y1(y1);
+        this.set_y2(y2);
+
+        if (this.has_left_wall) {
+            stroke(0);
+            line(x1, y1, x1, y2);
+        } else if (!this.has_left_wall) {
+            stroke(220);
+            line(x1, y1, x1, y2);
+        }
+
+        if (this.has_right_wall) {
+            stroke(0);
+            line(x2, y1, x2, y2);
+        } else if(!this.has_right_wall) {
+            stroke(220);
+            line(x2, y1, x2, y2);
+        }
+
+        if (this.has_bottom_wall) {
+            stroke(0);
+            line(x2, y1, x2, y2);
+        } else if (!this.has_bottom_wall) {
+            stroke(220);
+            line(x2, y1, x2, y2);
+        }
+
+        if (this.has_top_wall) {
+            stroke(0);
+            line(x2, y1, x2, y2);
+        } else if (!this.has_top_wall) {
+            stroke(220);
+            line(x2, y1, x2, y2);
+        }
+    }
+
+    draw_move(to_cell, undo=false){
+        half_length = Math.floor(Math.abs(this.get_x2() - this.get_x1()) / 2)
+        x_center = half_length + this.get_x1()
+        y_center = half_length + this.get_y1()
+
+        half_length2 = Math.floor(Math.abs(to_cell.get_x2() - to_cell.get_x1()) / 2)
+        x_center2 = half_length2 + to_cell.get_x1()
+        y_center2 = half_length2 + to_cell.get_y1()
+
+        stroke(255, 0, 0);
+        if (undo) {
+            stroke(128);
+        }
+
+        line(x_center, y_center, x_center2, y_center2);
     }
 }
