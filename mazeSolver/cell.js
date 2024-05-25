@@ -1,37 +1,27 @@
 class Cell {
     constructor(){
-        var __x1;
-        var __y1;
-        var __x2;
-        var __y2;
-
         this.has_left_wall = true;
         this.has_right_wall = true;
         this.has_bottom_wall = true;
         this.has_top_wall = true;
         this.visited = false;
-
-        this.set_x1 = function(x1){ __x1 = x1 };
-        this.get_x1 = function(){ return __x1 };
-        this.set_y1 = function (y1) { __y1 = y1 };
-        this.get_y1 = function () { return __y1 };
-        this.set_x2 = function (x2) { __x2 = x2 };
-        this.get_x2 = function () { return __x2 };
-        this.set_y2 = function (y2) { __y2 = y2 };
-        this.get_y2 = function () { return __y2 };
+        this.x1;
+        this.y1;
+        this.x2;
+        this.y2;
     }
 
     draw(x1, x2, y1, y2){
-        this.set_x1(x1);
-        this.set_x2(x2);
-        this.set_y1(y1);
-        this.set_y2(y2);
+        this.x1 = x1;
+        this.x2 = x2;
+        this.y1 = y1;
+        this.y2 = y2;
 
         if (this.has_left_wall) {
             stroke(0);
             line(x1, y1, x1, y2);
         } else if (!this.has_left_wall) {
-            stroke(220);
+            stroke(255);
             line(x1, y1, x1, y2);
         }
 
@@ -39,7 +29,7 @@ class Cell {
             stroke(0);
             line(x2, y1, x2, y2);
         } else if(!this.has_right_wall) {
-            stroke(220);
+            stroke(255);
             line(x2, y1, x2, y2);
         }
 
@@ -47,7 +37,7 @@ class Cell {
             stroke(0);
             line(x2, y1, x2, y2);
         } else if (!this.has_bottom_wall) {
-            stroke(220);
+            stroke(255);
             line(x2, y1, x2, y2);
         }
 
@@ -55,7 +45,7 @@ class Cell {
             stroke(0);
             line(x2, y1, x2, y2);
         } else if (!this.has_top_wall) {
-            stroke(220);
+            stroke(255);
             line(x2, y1, x2, y2);
         }
     }

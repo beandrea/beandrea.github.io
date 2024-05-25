@@ -1,28 +1,51 @@
 class Maze{
     constructor(x1, y1, num_rows, num_cols, cell_size_x, cell_size_y, seed=null){
-        var __cells = [];
-        var __x1;
-        var __y1;
-        var __num_rows;
-        var __num_cols;
-        var __cell_size_x;
-        var __cell_size_y;
+        this.cells = [];
+        this.x1 = x1;
+        this.y1 = y1;
+        this.num_rows = num_rows;
+        this.num_cols = num_cols;
+        this.cell_size_x = cell_size_x;
+        this.cell_size_y = cell_size_y;
 
-        this.set_cells = function(){
-            for(let i = 0; i < num_rows; i+=1){
-                let col_cells = [];
-                for(let j = 0; j < num_cols; j+=1){
-                    col_cells.push(Cell())
-                }
-                this.__cells.push(col_cells);
-            }
-        };
+        this.create_cells();
+        this.break_enterance_and_exit();
 
-        this.get_cells =  function(){ return __cells }
-        this.set_x1 = function(){ __x1 = x1 };
-        this.get_x1 = function(){ return __x1 };
-        this.set_y1 = function () { __y1 = y1 };
-        this.get_y1 = function () { return __y1 };
+        if(seed === null){
 
+        }
     }
+
+    create_cells(){
+        for(let i = 0; i < this.num_rows; i+=1){
+            let col_cells = [];
+            for(let j = 0; j < this.num_cols; j+=1){
+                col_cells.push(Cell());
+            }
+            this.cells.push(col_cells);
+        }
+        for (let i = 0; i < this.num_rows; i += 1) {
+            for (let j = 0; j < this.num_cols; j += 1) {
+                this.draw_cell(i, j);
+            }
+        }
+    }
+
+    draw_cell(i, j){
+        let x1 = this.x1 + i * this.cell_size_x;
+        let y1 = this.y1 + j * this.cell_size_y;
+        let x2 = x1 + this.cell_size_x;
+        let y2 = y1 + this.cell_size_y;
+
+        this.cells[i][j].draw(x1, y1, x2, y2);
+    }
+
+    break_enterance_and_exit(){
+        this.cells[0][0].has_top_wall = false;
+        this.draw_cell(0, 0);
+        this.cells[this.num_cols - 1][this.num_rows - 1].has_bottom_wall = false;
+        this.draw_cell(this.num_cols - 1, this.num_rows - 1);
+    }
+
+
 }
