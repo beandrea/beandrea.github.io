@@ -12,7 +12,7 @@ class Maze{
     }
 
     maze_setup(){
-        setTimeout(this.create_cells, 5000);
+        this.create_cells;
 
         this.break_enterance_and_exit();
 
