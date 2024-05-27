@@ -12,7 +12,8 @@ class Maze{
     }
 
     maze_setup(){
-        this.create_cells();
+        setTimeout(this.create_cells, 5000);
+
         this.break_enterance_and_exit();
 
         if (this.seed === null) {
@@ -21,7 +22,7 @@ class Maze{
             this.pseudo = Pseudo(this.seed);
         }
 
-        this.break_walls_r(0, 0);
+        setTimeout(this.break_walls_r(0, 0), 5000);
         this.reset_cells_visited();
     }
 
@@ -162,6 +163,6 @@ class Maze{
     }
 
     solve(){
-        return this.solve_r(0, 0);
+        setTimeout(function(){return this.solve_r(0, 0)}, 5000);
     }
 }
