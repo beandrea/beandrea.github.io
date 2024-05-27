@@ -7,14 +7,18 @@ class Maze{
         this.num_cols = num_cols;
         this.cell_size_x = cell_size_x;
         this.cell_size_y = cell_size_y;
+        this.seed = seed;
+        this.pseudo = null;
+    }
 
+    maze_setup(){
         this.create_cells();
         this.break_enterance_and_exit();
 
-        if(seed === null){
+        if (this.seed === null) {
             this.pseudo = Pseudo('apples');
         } else {
-            this.pseudo = Pseudo(seed);
+            this.pseudo = Pseudo(this.seed);
         }
 
         this.break_walls_r(0, 0);
