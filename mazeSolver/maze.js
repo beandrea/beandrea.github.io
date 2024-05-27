@@ -12,7 +12,7 @@ class Maze{
     }
 
     maze_setup(){
-        this.create_cells;
+        this.create_cells();
 
         this.break_enterance_and_exit();
 
@@ -51,6 +51,7 @@ class Maze{
     }
 
     break_enterance_and_exit(){
+        console.log(this.cells);
         this.cells[0][0].has_top_wall = false;
         this.draw_cell(0, 0);
         this.cells[this.num_cols - 1][this.num_rows - 1].has_bottom_wall = false;
