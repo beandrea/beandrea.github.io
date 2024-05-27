@@ -7,7 +7,7 @@ function setup() {
     const margin = 50;
     const cell_size_x = (windowWidth - 2 * margin) / num_cols;
     const cell_size_y = (windowHeight - 2 * margin) / num_rows;
-    maze = Maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y);
+    maze = new Maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y);
 }
 
 function draw(){
